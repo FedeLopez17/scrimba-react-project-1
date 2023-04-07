@@ -1,6 +1,15 @@
+:root {
+  --color-100: #ffffff;
+  --color-200: #deebf8;
+  --color-300: #61dafb;
+  --color-400: #282d35;
+  --color-500: #212222;
+}
+
 * {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 
 .page {
@@ -11,53 +20,76 @@
 
 /* Navigation bar */
 nav {
+  height: 90px;
+  padding: 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
-  box-shadow: 0px 0px 10px 0px lightgrey;
+  background-color: var(--color-500);
 }
 
-nav img {
-  width: 100px;
-}
-
-.nav-items {
+nav > .logo-wrapper {
   display: flex;
+  align-items: center;
 }
 
-.nav-items > * {
-  list-style: none;
-  padding: 0 10px;
+.logo-wrapper > img {
+  width: 70px;
+}
+
+.logo-wrapper > h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-300);
+}
+
+nav > h4 {
+  font-size: 1.2rem;
   font-weight: 600;
-  cursor: pointer;
-}
-
-.nav-items > :hover {
-  text-decoration: underline;
+  color: var(--color-200);
 }
 
 /* Main content */
 main {
   flex: 1;
-  align-self: center;
-  padding: 10% 2% 0;
+  background-color: var(--color-400);
+  color: var(--color-100);
+  display: flex;
+  justify-content: center;
+  background-image: url("./react-icon-large.png");
+  background-repeat: no-repeat;
+  background-position: right 75%;
+  background-size: 250px;
+}
+
+main > .text-wrapper {
+  padding: 5% 2%;
 }
 
 main h1 {
   font-size: 3.5rem;
+  font-weight: 700;
   padding-bottom: 5%;
 }
 
-main li {
+main ul {
   font-size: 1.3rem;
+}
+
+main li::marker {
+  color: var(--color-300);
+  font-size: 2rem;
+}
+
+main li:not(:nth-last-child(1)) {
+  padding-bottom: 2rem;
 }
 
 /* Footer */
 footer {
-  background-color: grey;
-  color: white;
-  padding: 10px 0;
+  background-color: var(--color-500);
+  color: var(--color-100);
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,6 +97,14 @@ footer {
 }
 
 @media (orientation: portrait), (max-width: 600px) {
+  .logo-wrapper > h3 {
+    font-size: 1.2rem;
+  }
+
+  nav > h4 {
+    font-size: 0.8rem;
+  }
+
   main h1 {
     font-size: 2rem;
   }
